@@ -12,17 +12,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     // Rotas de funcionarios
-    Route::get('/employees', [EmployeeController::class, 'index'])->name('employes');
-    Route::get('/employees/register', [EmployeeController::class, 'register'])->name('employes-register');
+    Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
+    Route::get('/employees/register', [EmployeeController::class, 'showFormEmployees'])->name('employees.register');
+    Route::post('/employees/register', [EmployeeController::class, 'register'])->name('employees.register.post');
 
     // Rotas de escalas;;
     Route::get('/scales', [ScaleController::class, 'index'])->name('scales');
-    Route::get('/scales/register', [ScaleController::class, 'register'])->name('scales-register');
+    Route::get('/scales/register', [ScaleController::class, 'register'])->name('scales.register');
 
     // Rotas de Usuarios;;
     Route::get('/users', [UserController::class, 'index'])->name('users');
-    Route::get('/users/register', [UserController::class, 'register'])->name('users-register');
-    Route::get('/users/edit/{$id}', [UserController::class, 'update'])->name('users-edit');
+    Route::get('/users/register', [UserController::class, 'register'])->name('users.register');
+    Route::get('/users/edit/{$id}', [UserController::class, 'update'])->name('users.edit');
 
 
     // Rotas de Company;;

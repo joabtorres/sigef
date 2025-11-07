@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'SIGEF - Sistema de Gestão de Escalas de Funcionários')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            /* Faz o conteúdo crescer e empurra o footer para baixo */
+        }
+    </style>
 </head>
 
 <body>
@@ -28,14 +45,11 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"> <i class="bi bi-people"></i> Escalas </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-plus-square"></i> Cadastrar</a>
+                            <li><a class="dropdown-item" href="{{ route('scales.register') }}"><i
+                                        class="bi bi-plus-square"></i> Cadastrar</a>
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-binoculars"></i> Consultar</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sair</a>
+                            <li><a class="dropdown-item" href="{{ route('scales') }}"><i class="bi bi-binoculars"></i>
+                                    Consultar</a>
                             </li>
                         </ul>
                     </li>
@@ -43,14 +57,11 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"> <i class="bi bi-people"></i> Funcionários </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-plus-square"></i> Cadastrar</a>
+                            <li><a class="dropdown-item" href="{{ route('employees.register') }}"><i
+                                        class="bi bi-plus-square"></i> Cadastrar</a>
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-binoculars"></i> Consultar</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sair</a>
+                            <li><a class="dropdown-item" href="{{ route('employees') }}"><i class="bi bi-binoculars"></i>
+                                    Consultar</a>
                             </li>
                         </ul>
                     </li>
@@ -58,14 +69,10 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"> <i class="bi bi-people"></i> Configurações </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-plus-square"></i> Cadastrar</a>
+                            <li><a class="dropdown-item" href="{{ route('company') }}"><i class="bi bi-plus-square"></i>
+                                    Empresa</a>
                             </li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-binoculars"></i> Consultar</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-left"></i> Sair</a>
                             </li>
                         </ul>
                     </li>
@@ -96,13 +103,8 @@
     <div class="container">
         @yield('content')
     </div>
-    <footer class="container">
-
-        <div class="row">
-            <div class="col">
-                <p class="border-top text-center pt-2 mt-3"> © 2025 - Joab Torres | Todos os direitos reservados</p>
-            </div>
-        </div>
+    <footer class="text-center py-3 mt-auto border-top container">
+        <small> © 2025 - Joab Torres | Todos os direitos reservados</small>
     </footer>
     @vite(['resources/js/bootstrap.bundle.min.js'])
 </body>
