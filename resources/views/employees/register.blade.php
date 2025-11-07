@@ -49,7 +49,7 @@
                 <form method="POST" action="{{ route('employees.register.post') }}" class="needs-validation" novalidate>
                     @csrf
                     <div class="card mb-3">
-                        <div class="card-header"><i class="bi bi-person"></i> Funcionário</div>
+                        <div class="card-header"><h6 class="h6 m-0 p-1"><i class="bi bi-person"></i> Funcionário</h6></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8 mb-3">
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="card mb-3">
-                        <div class="card-header"><i class="bi bi-geo-fill"></i> Endereço</div>
+                        <div class="card-header"><h6 class="h6 m-0 p-1"><i class="bi bi-geo-fill"></i> Endereço</h6></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 mb-3">
